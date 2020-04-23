@@ -1,1 +1,0 @@
-# assecor-frontend-test
