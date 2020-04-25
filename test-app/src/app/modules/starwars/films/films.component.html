@@ -4,5 +4,5 @@
   <p>title: {{ f.title }}</p>
   <p>director: {{ f.director }}</p>
   <p>release date: {{ f.release_date | date: 'dd.MM.yyyy' }}</p>
-  <p>more informations</p>
+  <p (click)="goToFilm(f.url)">more informations</p>
 </div>
