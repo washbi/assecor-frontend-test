@@ -1,20 +1,17 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Film} from '../../api/swapi/film';
 import {Page} from '../../api/swapi/page';
+import {SwapiService} from '../swapi.service';
+import {ResourcesEnum} from '../../api/swapi/resources.enum';
 
 @Injectable({ providedIn: 'root' })
-export class FilmService {
-
-  readonly path = 'swapi/films';
-
-  constructor(private http: HttpClient) {}
+export class FilmService extends SwapiService<Film> {
 
   all(): Promise<Page<Film>> {
-    return this.http.get<Page<Film>>(`${this.path}/`).toPromise();
+    return super.all(ResourcesEnum.FILMS);
   }
 
-  get(id: number): Promise<Film> {
-    return this.http.get<Film>(`${this.path}/${id}/`).toPromise();
+  getById(id: number): Promise<Film> {
+    return super.get(ResourcesEnum.FILMS, id);
   }
 }
