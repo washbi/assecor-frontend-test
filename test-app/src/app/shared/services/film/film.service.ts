@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Film} from '../../api/swapi/film';
-import {Page} from '../../api/swapi/page';
+import {Film} from '../../../api/swapi/film';
+import {Page} from '../../../api/swapi/page';
 import {SwapiService} from '../swapi.service';
-import {ResourcesEnum} from '../../api/swapi/resources.enum';
+import {ResourcesEnum} from '../../../api/swapi/resources.enum';
 
 @Injectable({ providedIn: 'root' })
 export class FilmService extends SwapiService<Film> {

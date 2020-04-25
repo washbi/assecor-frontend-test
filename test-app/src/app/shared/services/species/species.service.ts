@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {SwapiService} from '../swapi.service';
-import {Page} from '../../api/swapi/page';
-import {ResourcesEnum} from '../../api/swapi/resources.enum';
-import {Species} from '../../api/swapi/species';
+import {Page} from '../../../api/swapi/page';
+import {ResourcesEnum} from '../../../api/swapi/resources.enum';
+import {Species} from '../../../api/swapi/species';
 
 @Injectable({ providedIn: 'root' })
 export class SpeciesService extends SwapiService<Species> {

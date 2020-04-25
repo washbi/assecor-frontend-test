@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
-import {Page} from '../api/swapi/page';
-import {ResourcesEnum} from '../api/swapi/resources.enum';
+import {Page} from '../../api/swapi/page';
+import {ResourcesEnum} from '../../api/swapi/resources.enum';
 import {Injectable} from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
