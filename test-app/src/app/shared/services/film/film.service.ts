@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Film} from '../../../api/swapi/film';
-import {Page} from '../../../api/swapi/page';
 import {SwapiService} from '../swapi.service';
 import {ResourcesEnum} from '../../../api/swapi/resources.enum';
+import {Observable} from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class FilmService extends SwapiService<Film> {
 
-  all(): Promise<Page<Film>> {
+  all(): Observable<Film[]> {
     return super.all(ResourcesEnum.FILMS);
   }
 

@@ -7,8 +7,8 @@ import {Vehicle} from '../../../api/swapi/vehicle';
 @Injectable({ providedIn: 'root' })
 export class VehicleService extends SwapiService<Vehicle> {
 
-  all(): Promise<Page<Vehicle>> {
-    return super.all(ResourcesEnum.VEHICLES);
+  page(): Promise<Page<Vehicle>> {
+    return super.page(ResourcesEnum.VEHICLES);
   }
 
   getById(id: number): Promise<Vehicle> {

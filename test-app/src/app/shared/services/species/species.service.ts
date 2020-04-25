@@ -7,8 +7,8 @@ import {Species} from '../../../api/swapi/species';
 @Injectable({ providedIn: 'root' })
 export class SpeciesService extends SwapiService<Species> {
 
-  all(): Promise<Page<Species>> {
-    return super.all(ResourcesEnum.SPECIES);
+  page(): Promise<Page<Species>> {
+    return super.page(ResourcesEnum.SPECIES);
   }
 
   getById(id: number): Promise<Species> {

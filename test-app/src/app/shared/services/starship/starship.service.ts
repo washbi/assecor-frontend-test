@@ -7,8 +7,8 @@ import {Starship} from '../../../api/swapi/starship';
 @Injectable({ providedIn: 'root' })
 export class StarshipService extends SwapiService<Starship> {
 
-  all(): Promise<Page<Starship>> {
-    return super.all(ResourcesEnum.STARSHIPS);
+  page(): Promise<Page<Starship>> {
+    return super.page(ResourcesEnum.STARSHIPS);
   }
 
   getById(id: number): Promise<Starship> {

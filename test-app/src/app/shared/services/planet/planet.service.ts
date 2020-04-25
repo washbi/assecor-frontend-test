@@ -7,8 +7,8 @@ import {Planet} from '../../../api/swapi/planet';
 @Injectable({ providedIn: 'root' })
 export class PeopleService extends SwapiService<Planet> {
 
-  all(): Promise<Page<Planet>> {
-    return super.all(ResourcesEnum.PLANETS);
+  page(): Promise<Page<Planet>> {
+    return super.page(ResourcesEnum.PLANETS);
   }
 
   getById(id: number): Promise<Planet> {
