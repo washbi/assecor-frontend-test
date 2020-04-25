@@ -1,3 +1,8 @@
 <h1>{{title}}</h1>
 
-<div>Test aöjfdowae</div>
+<div *ngFor="let f of films | async">
+  <p>title: {{ f.title }}</p>
+  <p>director: {{ f.director }}</p>
+  <p>release date: {{ f.release_date | date: 'dd.MM.yyyy' }}</p>
+  <p>more informations</p>
+</div>

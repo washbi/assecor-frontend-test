@@ -4,6 +4,7 @@ import {StarwarsComponent} from './starwars.component';
 import {StarwarsRoutingModule} from './starwars-routing.module';
 import {FilmsComponent} from './films/films.component';
 import {LayoutMainParentComponent} from './layout-main-parent.component';
+import {BrowserModule} from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {LayoutMainParentComponent} from './layout-main-parent.component';
     FilmsComponent
   ],
   imports: [
+    BrowserModule,
     StarwarsRoutingModule,
     FlexLayoutModule
   ]
