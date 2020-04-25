@@ -1,0 +1,8 @@
+{
+  "/swapi/*": {
+    "target": "http://swapi.dev/api",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {"^/swapi" : ""}
+  }
+}
