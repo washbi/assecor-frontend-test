@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
+import {LayoutMainParentComponent} from '../layout-main-parent.component';
 
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html'
 })
-export class FilmsComponent {
+export class FilmsComponent extends LayoutMainParentComponent {
 
   title = 'Filme';
 
