@@ -21,7 +21,8 @@ then open http://localhost:4200
   * Can load more data on demand
 * Detail view of character detail TODO
 * List view of planets TODO
-* Fetch images from Google
+* Fetch images from Google 
+  * only for detail views, because of the google api limit
 * Responsive Web Design:
   * for Desktop >= width 1280px
   * for Desktop < width 1280px

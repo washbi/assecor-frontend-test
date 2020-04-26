@@ -1,4 +1,5 @@
 <div class="card" fxFlex fxLayout="column" fxLayoutAlign="space-between start">
+<!--  <img *ngIf="imageLink | async as link" [src]="link">-->
   <h4>{{ character.name }}</h4>
   <p>Born: {{ character.birth_year}}</p>
   <p *ngIf="homeworld | async as h">From: {{ h.name}}</p>

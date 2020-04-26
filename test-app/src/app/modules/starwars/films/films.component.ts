@@ -5,6 +5,7 @@ import {Film} from '../../../api/swapi/film';
 import {Observable} from 'rxjs';
 import {extractId} from '../../../shared/util/extract-id-from-url';
 import {filmsLabel} from '../starwars.component';
+import {GoogleService} from '../../../shared/services/google.service';
 
 @Component({
   selector: 'app-films',
@@ -16,7 +17,7 @@ export class FilmsComponent extends LayoutMainParentComponent implements OnInit 
 
   films: Observable<Film[]>;
 
-  constructor(private service: FilmService) {
+  constructor(private service: FilmService, private googleService: GoogleService) {
     super();
   }
 
