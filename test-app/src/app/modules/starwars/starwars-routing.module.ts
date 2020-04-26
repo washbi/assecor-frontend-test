@@ -5,6 +5,7 @@ import {FilmsComponent} from './films/films.component';
 import {FilmsDetailComponent} from './films-detail/films-detail.component';
 import {CharactersComponent} from './characters/characters.component';
 import {CharacterDetailComponent} from './character-detail/character-detail.component';
+import {ErrorComponent} from './error/error.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
       { path: 'films', component: FilmsComponent },
       { path: 'film/:id', component: FilmsDetailComponent },
       { path: 'characters', component: CharactersComponent },
-      { path: 'character/:id', component: CharacterDetailComponent }
+      { path: 'character/:id', component: CharacterDetailComponent },
+      { path: 'error', component: ErrorComponent }
     ]
   }
 ];

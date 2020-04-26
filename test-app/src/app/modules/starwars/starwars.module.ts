@@ -10,6 +10,7 @@ import {CharactersComponent} from './characters/characters.component';
 import {CharacterDetailComponent} from './character-detail/character-detail.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {CharactersCardComponent} from './characters-card/characters-card.component';
+import {ErrorComponent} from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {CharactersCardComponent} from './characters-card/characters-card.compone
     FilmsDetailComponent,
     CharactersComponent,
     CharactersCardComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
