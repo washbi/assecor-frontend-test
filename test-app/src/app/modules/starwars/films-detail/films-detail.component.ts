@@ -13,6 +13,7 @@ import {Vehicle} from '../../../api/swapi/vehicle';
 import {StarshipService} from '../../../shared/services/starship/starship.service';
 import {VehicleService} from '../../../shared/services/vehicle/vehicle.service';
 import {extractId} from '../../../shared/util/extract-id-from-url';
+import {GoogleService} from '../../../shared/services/google.service';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
 
   film: Film;
   episode = '';
+  imageLink: Observable<string>;
   characters: Observable<People>[] = [];
   planets: Observable<Planet>[] = [];
   starships: Observable<Starship>[] = [];
@@ -42,7 +44,8 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
               private peopleService: PeopleService,
               private planetService: PlanetService,
               private starshipService: StarshipService,
-              private vehicleService: VehicleService) {
+              private vehicleService: VehicleService,
+              private googleService: GoogleService) {
     super();
   }
 
@@ -53,6 +56,7 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
       .then(film => {
         this.film = film;
         this.episode = this.romanize(film.episode_id);
+        this.imageLink = this.googleService.getFirstImageResult(film.title, 'xlarge');
         this.fetchCharacters(film.characters);
         this.fetchPlanets(film.planets);
         this.fetchStarships(film.starships);

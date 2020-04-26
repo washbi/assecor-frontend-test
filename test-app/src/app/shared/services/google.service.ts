@@ -18,12 +18,12 @@ export class GoogleService {
   /**
    * returns an Observable with the image-link of the first google result.
    */
-  getFirstImageResult(query: string): Observable<string> {
+  getFirstImageResult(query: string, size: string): Observable<string> {
     const params = new HttpParams()
       .set('key', this.apiKey)
       .set('cx', this.searchEngineId)
       .set('searchType', 'image')
-      .set('imgSize', 'large')
+      .set('imgSize', size)
       .set('imgType', 'photo')
       .set('num', this.numberOfResults)
       .set('q', 'Star Wars ' + query);
