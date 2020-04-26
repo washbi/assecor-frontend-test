@@ -12,6 +12,11 @@ npm start
 ```
 then open http://localhost:4200
 
+## Compatible with
+* Chrome Desktop
+* Chrome Mobile
+* other Browsers not tested
+
 ## Features
 
 * List view of all films
@@ -22,6 +27,7 @@ then open http://localhost:4200
 * Detail view of character detail
   * linked to film detail
 * List view of species
+  * Can load more data on demand
 * Fetch images from Google 
   * only for detail views, because of the google api limit
 * Responsive Web Design:
