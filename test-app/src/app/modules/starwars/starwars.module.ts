@@ -7,6 +7,7 @@ import {LayoutMainParentComponent} from './layout-main-parent.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {FilmsDetailComponent} from './films-detail/films-detail.component';
 import {CharactersComponent} from './characters/characters.component';
+import {CharacterDetailComponent} from './character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {CharactersComponent} from './characters/characters.component';
     FilmsComponent,
     FilmsDetailComponent,
     CharactersComponent,
+    CharacterDetailComponent
   ],
   imports: [
     BrowserModule,
