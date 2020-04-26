@@ -4,7 +4,7 @@
   <div *ngFor="let c of characters" fxFlex.gt-md="33" fxFlex.md="50" fxFlex.lt-md="100">
     <app-characters-card [character]="c"></app-characters-card>
   </div>
-  <div *ngIf="page.next" fxFlex.gt-md="33" fxFlex.md="50" fxFlex.lt-md="100">
+  <div *ngIf="page?.next" fxFlex.gt-md="33" fxFlex.md="50" fxFlex.lt-md="100">
     <div class="load-cards-button" (click)="onLoadMore()">more characters...</div>
   </div>
 </div>
