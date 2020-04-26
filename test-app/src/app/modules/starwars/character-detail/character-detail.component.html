@@ -11,10 +11,19 @@
     <p><b>Gender:</b> {{character?.gender}}</p>
     <p><b>Planet:</b></p>
     <button *ngIf="planet | async as p" ngStyle.xs="width: 100%">{{p.name}}</button>
+    <p *ngIf="species.length > 0"><b>Species:</b></p>
+
+    <ng-container *ngFor="let s of species">
+      <button *ngIf="s | async as species" ngStyle.xs="width: 100%">{{species.name}}</button>
+    </ng-container>
   </div>
   <div fxFlex.gt-xs="50" fxFlex.xs="100" class="img-container">
     <img *ngIf="imageLink | async as link" [src]="link" [alt]="character?.name + 'photo'">
   </div>
+</section>
+
+<section>
+
 </section>
 
 <section>
