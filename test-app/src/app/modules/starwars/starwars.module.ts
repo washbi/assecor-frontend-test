@@ -5,14 +5,16 @@ import {StarwarsRoutingModule} from './starwars-routing.module';
 import {FilmsComponent} from './films/films.component';
 import {LayoutMainParentComponent} from './layout-main-parent.component';
 import {BrowserModule} from '@angular/platform-browser';
-import {FilmsDetailComponent} from './films-detail.component/films-detail.component';
+import {FilmsDetailComponent} from './films-detail/films-detail.component';
+import {CharactersComponent} from './characters/characters.component';
 
 @NgModule({
   declarations: [
     StarwarsComponent,
     LayoutMainParentComponent,
     FilmsComponent,
-    FilmsDetailComponent
+    FilmsDetailComponent,
+    CharactersComponent,
   ],
   imports: [
     BrowserModule,

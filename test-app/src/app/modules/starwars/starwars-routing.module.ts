@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {StarwarsComponent} from './starwars.component';
 import {FilmsComponent} from './films/films.component';
-import {FilmsDetailComponent} from './films-detail.component/films-detail.component';
+import {FilmsDetailComponent} from './films-detail/films-detail.component';
+import {CharactersComponent} from './characters/characters.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
     component: StarwarsComponent,
     children: [
       { path: 'films', component: FilmsComponent },
-      { path: 'film/:id', component: FilmsDetailComponent }
+      { path: 'film/:id', component: FilmsDetailComponent },
+      { path: 'characters', component: CharactersComponent }
     ]
   }
 ];
