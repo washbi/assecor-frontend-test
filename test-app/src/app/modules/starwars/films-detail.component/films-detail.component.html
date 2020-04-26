@@ -2,5 +2,27 @@
 <h1>{{film?.title}}</h1>
 <h3>{{episode}}</h3>
 
-<textarea [innerHTML]="film?.opening_crawl">
-</textarea>
+<section>
+  <h4>Details:</h4>
+  <p>Director: {{film?.director}}</p>
+  <p>Producer: {{film?.producer}}</p>
+  <p>Release Date: {{film?.release_date | date: 'dd.MM.yyyy'}}</p>
+  <textarea [innerHTML]="film?.opening_crawl">
+  </textarea>
+</section>
+
+<section>
+  <h4>Characters:</h4>
+</section>
+
+<section>
+  <h4>Planets:</h4>
+</section>
+
+<section>
+  <h4>Starships:</h4>
+</section>
+
+<section>
+  <h4>Vehicles:</h4>
+</section>
