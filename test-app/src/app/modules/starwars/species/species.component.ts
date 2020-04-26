@@ -5,6 +5,7 @@ import {Page} from '../../../api/swapi/page';
 import {extractPageNumber} from '../../../shared/util/extract-page-number-from-url';
 import {SpeciesService} from '../../../shared/services/species/species.service';
 import {Species} from '../../../api/swapi/species';
+import {ErrorHandlingService} from '../../../shared/services/error-handling.service';
 
 @Component({
   selector: 'app-species',
@@ -17,7 +18,7 @@ export class SpeciesComponent extends LayoutMainParentComponent implements OnIni
   species: Species[] = [];
   page: Page<Species>;
 
-  constructor(private service: SpeciesService) {
+  constructor(private service: SpeciesService, private errorService: ErrorHandlingService) {
     super();
   }
 
@@ -33,6 +34,6 @@ export class SpeciesComponent extends LayoutMainParentComponent implements OnIni
     this.service.page(pageNumber).then(page => {
       this.page = page;
       this.species.push(...page.results);
-    }).catch(err => console.error(err));
+    }).catch(err => this.errorService.handleError(err));
   }
 }

@@ -16,6 +16,7 @@ import {SpeciesService} from '../../../shared/services/species/species.service';
 import {Species} from '../../../api/swapi/species';
 import {PlanetService} from '../../../shared/services/planet/planet.service';
 import {Planet} from '../../../api/swapi/planet';
+import {ErrorHandlingService} from '../../../shared/services/error-handling.service';
 
 @Component({
   selector: 'app-character-detail',
@@ -39,7 +40,8 @@ export class CharacterDetailComponent extends LayoutMainParentComponent implemen
               private speciesService: SpeciesService,
               private starshipService: StarshipService,
               private vehicleService: VehicleService,
-              private googleService: GoogleService) {
+              private googleService: GoogleService,
+              private errorService: ErrorHandlingService) {
     super();
   }
 
@@ -56,7 +58,7 @@ export class CharacterDetailComponent extends LayoutMainParentComponent implemen
         this.fetchStarships(people.starships);
         this.fetchVehicles(people.vehicles);
       })
-      .catch(err => console.error(err.message));
+      .catch(err => this.errorService.handleError(err));
   }
 
   goToFilm(url: string) {

@@ -5,13 +5,14 @@ import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {Router} from '@angular/router';
+import {ErrorHandlingService} from './error-handling.service';
 
 @Injectable({ providedIn: 'root' })
 export abstract class SwapiService<T> {
 
   readonly basePath = 'https://swapi.dev/api';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private errorService: ErrorHandlingService) {}
 
   all(resource: ResourcesEnum): Observable<T[]> {
     return this.http
@@ -19,7 +20,7 @@ export abstract class SwapiService<T> {
       .pipe(
         map(page => page.results),
         catchError(err => {
-          this.handleError(err);
+          this.errorService.handleError(err);
           return of([]);
         })
       );
@@ -31,7 +32,7 @@ export abstract class SwapiService<T> {
       .get<Page<T>>(`${this.basePath}/${resource}/`, { params })
       .pipe(
         catchError(err => {
-          this.handleError(err);
+          this.errorService.handleError(err);
           return of(null);
         })
       )
@@ -43,14 +44,9 @@ export abstract class SwapiService<T> {
       .get<T>(`${this.basePath}/${resource}/${id}/`)
       .pipe(
         catchError(err => {
-          this.handleError(err);
+          this.errorService.handleError(err);
           return of(null);
         })
       );
-  }
-
-  handleError(err) {
-    console.error(err);
-    this.router.navigate(['starwars/error']);
   }
 }

@@ -14,6 +14,7 @@ import {StarshipService} from '../../../shared/services/starship/starship.servic
 import {VehicleService} from '../../../shared/services/vehicle/vehicle.service';
 import {extractId} from '../../../shared/util/extract-id-from-url';
 import {GoogleService} from '../../../shared/services/google.service';
+import {ErrorHandlingService} from '../../../shared/services/error-handling.service';
 
 
 @Component({
@@ -45,7 +46,8 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
               private planetService: PlanetService,
               private starshipService: StarshipService,
               private vehicleService: VehicleService,
-              private googleService: GoogleService) {
+              private googleService: GoogleService,
+              private errorService: ErrorHandlingService) {
     super();
   }
 
@@ -62,7 +64,7 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
         this.fetchStarships(film.starships);
         this.fetchVehicles(film.vehicles);
       })
-      .catch(err => console.error(err.message));
+      .catch(err => this.errorService.handleError(err));
   }
 
   goToCharacter(url: string) {

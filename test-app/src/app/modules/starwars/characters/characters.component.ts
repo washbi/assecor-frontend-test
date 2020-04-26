@@ -5,6 +5,7 @@ import {People} from '../../../api/swapi/people';
 import {PeopleService} from '../../../shared/services/people/people.service';
 import {Page} from '../../../api/swapi/page';
 import {extractPageNumber} from '../../../shared/util/extract-page-number-from-url';
+import {ErrorHandlingService} from '../../../shared/services/error-handling.service';
 
 @Component({
   selector: 'app-characters',
@@ -17,7 +18,7 @@ export class CharactersComponent extends LayoutMainParentComponent implements On
   characters: People[] = [];
   page: Page<People>;
 
-  constructor(private service: PeopleService) {
+  constructor(private service: PeopleService, private errorService: ErrorHandlingService) {
     super();
   }
 
@@ -33,6 +34,6 @@ export class CharactersComponent extends LayoutMainParentComponent implements On
     this.service.page(pageNumber).then(page => {
       this.page = page;
       this.characters.push(...page.results);
-    }).catch(err => console.error(err));
+    }).catch(err => this.errorService.handleError(err));
   }
 }
