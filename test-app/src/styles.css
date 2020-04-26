@@ -69,6 +69,7 @@ section button {
   border-radius: 2px;
   border: none;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .card {

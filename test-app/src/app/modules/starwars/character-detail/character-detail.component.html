@@ -1,0 +1,42 @@
+<h1>{{character?.name}}</h1>
+
+<section fxLayout.gt-xs="row" fxLayout.xs="column-reverse" fxLayoutGap.xs="1em">
+  <div fxFlex.gt-xs="50" fxFlex.xs="100">
+    <h3>Details:</h3>
+    <p><b>Height:</b> {{character?.height}}</p>
+    <p><b>Weight:</b> {{character?.mass}}</p>
+    <p><b>Hair color:</b> {{character?.hair_color}}</p>
+    <p><b>Eye color:</b> {{character?.eye_color}}</p>
+    <p><b>Born:</b> {{character?.birth_year}}</p>
+    <p><b>Gender:</b> {{character?.gender}}</p>
+    <p><b>Planet:</b></p>
+    <button *ngIf="planet | async as p" ngStyle.xs="width: 100%">{{p.name}}</button>
+  </div>
+  <div fxFlex.gt-xs="50" fxFlex.xs="100" class="img-container">
+    <img *ngIf="imageLink | async as link" [src]="link" [alt]="character?.name + 'photo'">
+  </div>
+</section>
+
+<section>
+  <h3>Films:</h3>
+
+  <ng-container *ngFor="let film of films">
+    <button *ngIf="film | async as f" (click)="goToFilm(f.url)" ngStyle.xs="width: 100%">{{f.title}}</button>
+  </ng-container>
+</section>
+
+<section>
+  <h3>Starships:</h3>
+
+  <ng-container *ngFor="let starship of starships">
+    <button *ngIf="starship | async as s" ngStyle.xs="width: 100%">{{s.name}}</button>
+  </ng-container>
+</section>
+
+<section>
+  <h3>Vehicles:</h3>
+
+  <ng-container *ngFor="let vehicle of vehicles">
+    <button *ngIf="vehicle | async as v" ngStyle.xs="width: 100%">{{v.name}}</button>
+  </ng-container>
+</section>
