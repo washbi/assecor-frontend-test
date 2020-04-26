@@ -1,5 +1,8 @@
-.header {
+.header-container {
   background-color: black;
+}
+
+.header {
   color: gold;
   padding: 1em;
 }

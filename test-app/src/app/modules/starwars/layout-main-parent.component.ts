@@ -15,5 +15,6 @@ export class LayoutMainParentComponent {
   @HostBinding('style.minWidth') minWidth = '100%';
   @HostBinding('style.minHeight') minHeight = '100%';
   @HostBinding('style.boxSizing') boxSizing = 'border-box';
+  @HostBinding('style.padding') padding = '2em';
 
 }
