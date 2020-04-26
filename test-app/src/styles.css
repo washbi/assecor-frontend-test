@@ -49,8 +49,8 @@ section textarea {
 }
 
 section button {
-  padding: 1em 0 1em 1em;
-  margin-right: 1em;
+  margin: .5em 1em .5em 0;
+  padding: 1em;
   background-color: var(--b-background-color-secondary);
   border-radius: 2px;
   border: none;
