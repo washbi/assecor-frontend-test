@@ -1,25 +1,54 @@
 .header-container {
-  background-color: black;
+  background-color: var(--a-background-color);
 }
 
 .header {
-  color: gold;
+  color: var(--a-font-color);
   padding: 1em;
+}
+
+img {
+  height: 4em;
+}
+
+nav {
+  margin: 0 2em;
 }
 
 a {
   font-size: 0.8em;
   color: gold;
-  margin: 0.5em;
+  margin: 1em;
   text-decoration: none;
 }
 
 .active {
-  color: #eea4ff;
+  color: var(--a-font-color-primary);
+  text-shadow: 0 0 10px var(--a-font-color-primary);
+  font-weight: bold;
 }
 
 .mobile-app-title {
   font-family: 'Star Jedi Hollow';
   margin: 0;
   font-size: 1.5em;
+}
+
+input {
+  background-color: #212121;
+  --search-color: #ffd700a3;
+  border: 2px solid var(--search-color);
+  color: var(--a-font-color);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: var(--search-color);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--search-color);
+}
+
+::placeholder {
+  color: var(--search-color);
 }

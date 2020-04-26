@@ -1,3 +1,12 @@
+:root {
+  --a-background-color: black;
+  --a-font-color: #FFE919;
+  --a-font-color-primary: #ABDDED;
+
+  --b-background-color: white;
+  --b-font-color: black;
+}
+
 html, body {
   margin: 0;
   height: 100%;
@@ -7,4 +16,10 @@ html, body {
 
 h1,h2,h3 {
   font-family: 'Star Jedi';
+}
+
+input {
+  font-family: 'Open Sans';
+  padding: 1em;
+  border-radius: 2px;
 }
