@@ -1,7 +1,7 @@
 import {LayoutMainParentComponent} from '../layout-main-parent.component';
 import {Component, OnInit} from '@angular/core';
 import {FilmService} from '../../../shared/services/film/film.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Film} from '../../../api/swapi/film';
 import {People} from '../../../api/swapi/people';
@@ -37,6 +37,7 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
   };
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private filmService: FilmService,
               private peopleService: PeopleService,
               private planetService: PlanetService,
@@ -58,6 +59,10 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
         this.fetchVehicles(film.vehicles);
       })
       .catch(err => console.error(err.message));
+  }
+
+  goToCharacter(url: string) {
+    this.router.navigate([`starwars/character/${extractId(url)}`]);
   }
 
   private romanize(num: number) {

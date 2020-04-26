@@ -15,7 +15,7 @@
   <h4>Characters:</h4>
 
   <ng-container *ngFor="let character of characters">
-    <div *ngIf="character | async as c">{{c.name}}</div>
+    <div *ngIf="character | async as c" (click)="goToCharacter(c.url)">{{c.name}}</div>
   </ng-container>
 </section>
 

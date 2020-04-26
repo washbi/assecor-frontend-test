@@ -8,6 +8,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FilmsDetailComponent} from './films-detail/films-detail.component';
 import {CharactersComponent} from './characters/characters.component';
 import {CharacterDetailComponent} from './character-detail/character-detail.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {CharacterDetailComponent} from './character-detail/character-detail.comp
   imports: [
     BrowserModule,
     StarwarsRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    DragDropModule
   ]
 })
 export class StarwarsModule {}
