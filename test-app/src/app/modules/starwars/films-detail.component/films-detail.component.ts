@@ -12,6 +12,7 @@ import {Starship} from '../../../api/swapi/starship';
 import {Vehicle} from '../../../api/swapi/vehicle';
 import {StarshipService} from '../../../shared/services/starship/starship.service';
 import {VehicleService} from '../../../shared/services/vehicle/vehicle.service';
+import {extractId} from '../../../shared/util/extract-id-from-url';
 
 
 @Component({
@@ -71,34 +72,18 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
   }
 
   private fetchCharacters(urls: string[]) {
-    urls.forEach(url => {
-      const urlParts = url.split('/');
-      const charId = urlParts[urlParts.length - 2];
-      this.characters.push(this.peopleService.getById(Number(charId)));
-    });
+    urls.forEach(url => this.characters.push(this.peopleService.getById(extractId(url))));
   }
 
   private fetchPlanets(urls: string[]) {
-    urls.forEach(url => {
-      const urlParts = url.split('/');
-      const charId = urlParts[urlParts.length - 2];
-      this.planets.push(this.planetService.getById(Number(charId)));
-    });
+    urls.forEach(url => this.planets.push(this.planetService.getById(extractId(url))));
   }
 
   private fetchStarships(urls: string[]) {
-    urls.forEach(url => {
-      const urlParts = url.split('/');
-      const charId = urlParts[urlParts.length - 2];
-      this.starships.push(this.starshipService.getById(Number(charId)));
-    });
+    urls.forEach(url => this.starships.push(this.starshipService.getById(extractId(url))));
   }
 
   private fetchVehicles(urls: string[]) {
-    urls.forEach(url => {
-      const urlParts = url.split('/');
-      const charId = urlParts[urlParts.length - 2];
-      this.vehicles.push(this.vehicleService.getById(Number(charId)));
-    });
+    urls.forEach(url => this.vehicles.push(this.vehicleService.getById(extractId(url))));
   }
 }

@@ -4,6 +4,7 @@ import {FilmService} from '../../../shared/services/film/film.service';
 import {Film} from '../../../api/swapi/film';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {extractId} from '../../../shared/util/extract-id-from-url';
 
 @Component({
   selector: 'app-films',
@@ -24,8 +25,6 @@ export class FilmsComponent extends LayoutMainParentComponent implements OnInit 
   }
 
   goToFilm(url: string) {
-    const urlParts = url.split('/');
-    const id = urlParts[urlParts.length - 2];
-    this.router.navigate([`starwars/film/${id}`]);
+    this.router.navigate([`starwars/film/${extractId(url)}`]);
   }
 }
