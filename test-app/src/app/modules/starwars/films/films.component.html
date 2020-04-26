@@ -1,8 +1,14 @@
 <h1>{{title}}</h1>
 
-<div *ngFor="let f of films | async">
-  <p>title: {{ f.title }}</p>
-  <p>director: {{ f.director }}</p>
-  <p>release date: {{ f.release_date | date: 'dd.MM.yyyy' }}</p>
-  <p (click)="goToFilm(f.url)">more informations</p>
+<div fxLayout="row wrap">
+  <div *ngFor="let f of films | async" fxFlex.gt-md="33" fxFlex.md="50" fxFlex.lt-md="100">
+    <div class="card" fxFlex fxLayout="column" fxLayoutAlign="space-between start">
+      <h4>{{ f.title }}</h4>
+      <p>Director: {{ f.director }}</p>
+      <p>Producer: {{ f.producer }}</p>
+      <p>Release date: {{ f.release_date | date: 'dd.MM.yyyy' }}</p>
+      <a [routerLink]="getFilmLink(f.url)"><b>More informations...</b></a>
+    </div>
+  </div>
 </div>
+

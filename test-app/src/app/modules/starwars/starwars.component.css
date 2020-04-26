@@ -1,5 +1,6 @@
 .header-container {
   background-color: var(--a-background-color);
+  box-shadow: 0 5px 10px var(--shadow-color);
 }
 
 .header {
