@@ -12,7 +12,16 @@ import {Film} from '../../../api/swapi/film';
 })
 export class FilmsDetailComponent extends LayoutMainParentComponent implements OnInit {
 
-  film: Observable<Film>;
+  film: Film;
+  episode = '';
+
+  readonly roman = {
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1
+  };
 
   constructor(private route: ActivatedRoute, private service: FilmService) {
     super();
@@ -20,8 +29,23 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    console.log(id);
-    this.film = this.service.getById(id);
+    this.service
+      .getById(id)
+      .then(film => {
+        this.film = film;
+        this.episode = this.romanize(film.episode_id);
+      })
+      .catch(err => console.error(err.message));
   }
 
+  private romanize(num: number) {
+    let result = 'Episode ';
+    for (const index of Object.keys(this.roman)) {
+      while (num >= this.roman[index]) {
+        result += index;
+        num -= this.roman[index];
+      }
+    }
+    return result;
+  }
 }

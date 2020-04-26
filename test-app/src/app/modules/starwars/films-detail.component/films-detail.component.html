@@ -1,9 +1,6 @@
-<div *ngIf="film | async as f">
-  <h2>Filmdetails</h2>
-  <h1>{{f.title}}</h1>
-  <h3>Episode 0293042</h3>
+<h2>Filmdetails</h2>
+<h1>{{film?.title}}</h1>
+<h3>{{episode}}</h3>
 
-  <div>
-    {{f.opening_crawl}}
-  </div>
-</div>
+<textarea [innerHTML]="film?.opening_crawl">
+</textarea>
