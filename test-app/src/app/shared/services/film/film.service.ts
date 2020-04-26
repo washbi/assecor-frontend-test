@@ -11,7 +11,7 @@ export class FilmService extends SwapiService<Film> {
     return super.all(ResourcesEnum.FILMS);
   }
 
-  getById(id: number): Observable<Film> {
+  getById(id: number): Promise<Film> {
     return super.get(ResourcesEnum.FILMS, id);
   }
 }

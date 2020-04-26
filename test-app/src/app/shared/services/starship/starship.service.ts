@@ -3,7 +3,6 @@ import {SwapiService} from '../swapi.service';
 import {Page} from '../../../api/swapi/page';
 import {ResourcesEnum} from '../../../api/swapi/resources.enum';
 import {Starship} from '../../../api/swapi/starship';
-import {Observable} from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class StarshipService extends SwapiService<Starship> {
@@ -12,7 +11,7 @@ export class StarshipService extends SwapiService<Starship> {
     return super.page(ResourcesEnum.STARSHIPS);
   }
 
-  getById(id: number): Observable<Starship> {
+  getById(id: number): Promise<Starship> {
     return super.get(ResourcesEnum.STARSHIPS, id);
   }
 }

@@ -20,8 +20,8 @@ export abstract class SwapiService<T> {
     return this.http.get<Page<T>>(`${this.basePath}/${resource}/`).toPromise();
   }
 
-  get(resource: ResourcesEnum, id: number): Observable<T> {
-    return this.http.get<T>(`${this.basePath}/${resource}/${id}/`);
+  get(resource: ResourcesEnum, id: number): Promise<T> {
+    return this.http.get<T>(`${this.basePath}/${resource}/${id}/`).toPromise();
   }
 
 }
