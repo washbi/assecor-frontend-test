@@ -12,6 +12,13 @@ npm start
 ```
 then open http://localhost:4200
 
+## Features
+
+* Responsive Web Design:
+  * for Desktop >= width 1280px
+  * for Desktop < width 1280px
+  * for Mobile **(only design - no functionality)**
+
 ## Built with
 
 * [Star Wars Api](https://swapi.dev/)
@@ -19,3 +26,4 @@ then open http://localhost:4200
 * [Angular Flex Layout](https://github.com/angular/flex-layout)
 * <a target="_blank" href="https://icons8.com/icons/set/star-wars">Star Wars icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 * Fonts from [Star Jedi](https://www.dafont.com/de/star-jedi.font) and [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+* Icons from [Material Design Icons](https://google.github.io/material-design-icons/)

@@ -26,7 +26,8 @@
             "styles": [
               "src/styles.css",
               "src/assets/fonts/open-sans/open-sans.css",
-              "src/assets/fonts/star-jedi/star-jedi.css"
+              "src/assets/fonts/star-jedi/star-jedi.css",
+              "src/assets/icons/material-icons/material-icons.css"
             ],
             "scripts": []
           },
