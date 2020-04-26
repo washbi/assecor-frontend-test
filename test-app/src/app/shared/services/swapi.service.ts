@@ -1,4 +1,4 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Page} from '../../api/swapi/page';
 import {ResourcesEnum} from '../../api/swapi/resources.enum';
 import {Injectable} from '@angular/core';
@@ -16,8 +16,9 @@ export abstract class SwapiService<T> {
     return this.http.get<Page<T>>(`${this.basePath}/${resource}/`).pipe(map(page => page.results));
   }
 
-  page(resource: ResourcesEnum): Promise<Page<T>> {
-    return this.http.get<Page<T>>(`${this.basePath}/${resource}/`).toPromise();
+  page(pageNumber: number, resource: ResourcesEnum): Promise<Page<T>> {
+    const params = new HttpParams().set('page', String(pageNumber));
+    return this.http.get<Page<T>>(`${this.basePath}/${resource}/`, { params }).toPromise();
   }
 
   get(resource: ResourcesEnum, id: number): Observable<T> {

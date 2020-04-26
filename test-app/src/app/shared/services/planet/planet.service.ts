@@ -8,8 +8,8 @@ import {Observable} from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class PlanetService extends SwapiService<Planet> {
 
-  page(): Promise<Page<Planet>> {
-    return super.page(ResourcesEnum.PLANETS);
+  page(pageNumber: number): Promise<Page<Planet>> {
+    return super.page(pageNumber, ResourcesEnum.PLANETS);
   }
 
   getById(id: number): Observable<Planet> {
