@@ -13,16 +13,32 @@
 
 <section>
   <h4>Characters:</h4>
+
+  <ng-container *ngFor="let character of characters">
+    <div *ngIf="character | async as c">{{c.name}}</div>
+  </ng-container>
 </section>
 
 <section>
   <h4>Planets:</h4>
+
+  <ng-container *ngFor="let planet of planets">
+    <div *ngIf="planet | async as p">{{p.name}}</div>
+  </ng-container>
 </section>
 
 <section>
   <h4>Starships:</h4>
+
+  <ng-container *ngFor="let starship of starships">
+    <div *ngIf="starship | async as s">{{s.name}}</div>
+  </ng-container>
 </section>
 
 <section>
   <h4>Vehicles:</h4>
+
+  <ng-container *ngFor="let vehicle of vehicles">
+    <div *ngIf="vehicle | async as v">{{v.name}}</div>
+  </ng-container>
 </section>
