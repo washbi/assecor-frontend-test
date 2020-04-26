@@ -17,3 +17,9 @@ a {
 .active {
   color: #eea4ff;
 }
+
+.mobile-app-title {
+  font-family: 'Star Jedi Hollow';
+  margin: 0;
+  font-size: 1.5em;
+}

@@ -1,8 +1,9 @@
 <div fxLayout="column" fxFlexFill>
   <div fxLayout="row" fxLayoutAlign="center stretch" class="header-container">
-    <header fxFlex fxFlex.gt-md="1280px"
+    <!-- DESKTOP -->
+    <header fxShow.gt-xs fxHide.xs fxFlex fxFlex.gt-md="1280px"
             class="header" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
-      <img src="assets/icons8-star-wars.svg">
+      <img src="assets/icons/icons8-star-wars.svg">
       <nav fxLayout="row wrap">
         <a routerLink="films" routerLinkActive="active">{{films}}</a>
         <a routerLink="characters" routerLinkActive="active">{{characteres}}</a>
@@ -13,6 +14,14 @@
       </nav>
       <div fxFlex></div>
       <input placeholder="Search">
+    </header>
+
+    <!-- MOBILE -->
+    <header fxHide.gt-xs fxShow.xs fxFlex
+            class="header" fxLayout="row" fxLayoutAlign="space-between center">
+      <i class="material-icons">menu</i>
+      <h1 class="mobile-app-title">Star Wars</h1>
+      <i class="material-icons">search</i>
     </header>
   </div>
 
