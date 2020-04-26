@@ -2,4 +2,9 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
+  font-family: 'Open Sans';
+}
+
+h1,h2,h3 {
+  font-family: 'Star Jedi';
 }

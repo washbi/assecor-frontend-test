@@ -1,0 +1,25 @@
+/* star-jedi*/
+@font-face {
+  font-family: "Star Jedi";
+  font-style: normal;
+  font-weight: normal;
+  src: url("Starjedi.eot"); /* IE9 Compat Modes */
+  src: url("Starjedi.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("Starjedi.svg") format("svg"), /* Legacy iOS */
+  url("Starjedi.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("Starjedi.woff") format("woff"), /* Modern Browsers */
+  url("Starjedi.woff2") format("woff2"); /* Modern Browsers */
+}
+
+/* star-jedi - hollow */
+@font-face {
+  font-family: 'Star Jedi Hollow';
+  font-style: normal;
+  font-weight: normal;
+  src: url('Starjhol.eot'); /* IE9 Compat Modes */
+  src: url('Starjhol.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('Starjhol.woff2') format('woff2'), /* Super Modern Browsers */
+  url('Starjhol.woff') format('woff'), /* Modern Browsers */
+  url('Starjhol.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('Starjhol.svg') format('svg'); /* Legacy iOS */
+}
