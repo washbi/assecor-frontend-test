@@ -2,12 +2,7 @@
 
 <div fxLayout="row wrap">
   <div *ngFor="let s of species" fxFlex.gt-md="33" fxFlex.md="50" fxFlex.lt-md="100">
-    <div class="card" fxFlex fxLayout="column" fxLayoutAlign="space-between start">
-      <h4>{{ s.name }}</h4>
-      <p>Planet: {{ s.homeworld }}</p>
-      <p>Language: {{ s.language }}</p>
-      <a><b>More informations...</b></a>
-    </div>
+    <app-species-card [species]="s"></app-species-card>
   </div>
   <div *ngIf="page?.next" fxFlex.gt-md="33" fxFlex.md="50" fxFlex.lt-md="100">
     <div class="load-cards-button" (click)="onLoadMore()">more species...</div>

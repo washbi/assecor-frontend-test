@@ -12,6 +12,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {CharactersCardComponent} from './characters-card/characters-card.component';
 import {ErrorComponent} from './error/error.component';
 import {SpeciesComponent} from './species/species.component';
+import {SpeciesCardComponent} from './species-card/species-card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {SpeciesComponent} from './species/species.component';
     CharactersCardComponent,
     CharacterDetailComponent,
     SpeciesComponent,
+    SpeciesCardComponent,
     ErrorComponent
   ],
   imports: [

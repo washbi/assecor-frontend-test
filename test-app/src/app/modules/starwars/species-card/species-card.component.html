@@ -1,0 +1,6 @@
+<div class="card" fxFlex fxLayout="column" fxLayoutAlign="space-between start">
+  <h4>{{ species.name }}</h4>
+  <p *ngIf="planet | async as p">Planet: {{ p.name }}</p>
+  <p>Language: {{ species.language }}</p>
+  <a><b>More informations...</b></a>
+</div>
