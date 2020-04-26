@@ -19,7 +19,8 @@ then open http://localhost:4200
   * linked to character detail
 * List view of characters
   * Can load more data on demand
-* Detail view of character detail TODO
+* Detail view of character detail
+  * linked to film detail
 * List view of planets TODO
 * Fetch images from Google 
   * only for detail views, because of the google api limit
