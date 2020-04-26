@@ -15,7 +15,6 @@ export class CharactersComponent extends LayoutMainParentComponent implements On
   title = charactersLabel;
 
   characters: People[] = [];
-
   page: Page<People>;
 
   constructor(private service: PeopleService) {
