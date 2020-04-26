@@ -1,0 +1,6 @@
+<div class="card" fxFlex fxLayout="column" fxLayoutAlign="space-between start">
+  <h4>{{ character.name }}</h4>
+  <p>Born: {{ character.birth_year}}</p>
+  <p *ngIf="homeworld | async as h">From: {{ h.name}}</p>
+  <a [routerLink]="getCharacterLink(character.url)"><b>More informations...</b></a>
+</div>

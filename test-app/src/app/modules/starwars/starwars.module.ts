@@ -9,6 +9,7 @@ import {FilmsDetailComponent} from './films-detail/films-detail.component';
 import {CharactersComponent} from './characters/characters.component';
 import {CharacterDetailComponent} from './character-detail/character-detail.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {CharactersCardComponent} from './characters-card/characters-card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FilmsComponent,
     FilmsDetailComponent,
     CharactersComponent,
+    CharactersCardComponent,
     CharacterDetailComponent
   ],
   imports: [
