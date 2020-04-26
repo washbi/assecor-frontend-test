@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export abstract class SwapiService<T> {
 
-  readonly basePath = 'swapi';
+  readonly basePath = 'https://swapi.dev/api';
 
   constructor(private http: HttpClient) {}
 
