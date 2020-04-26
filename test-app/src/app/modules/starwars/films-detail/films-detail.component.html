@@ -13,7 +13,7 @@
     </div>
   </div>
   <div fxFlex.gt-xs="50" fxFlex.xs="100" class="img-container">
-    <img *ngIf="imageLink | async as link" [src]="link">
+    <img *ngIf="imageLink | async as link" [src]="link" [alt]="film?.title + 'photo'">
   </div>
 </section>
 
