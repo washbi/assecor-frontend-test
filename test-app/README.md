@@ -19,7 +19,9 @@ then open http://localhost:4200
   * linked to character detail
 * List view of characters
   * Can load more data on demand
-  
+* Detail view of character detail TODO
+* List view of planets TODO
+* Fetch images from Google
 * Responsive Web Design:
   * for Desktop >= width 1280px
   * for Desktop < width 1280px
@@ -28,6 +30,7 @@ then open http://localhost:4200
 ## Built with
 
 * [Star Wars Api](https://swapi.dev/)
+* [Google Custom Search](https://developers.google.com/custom-search/)
 * [Angular 9](https://angular.io/)
 * [Angular Flex Layout](https://github.com/angular/flex-layout)
 * <a target="_blank" href="https://icons8.com/icons/set/star-wars">Star Wars icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
