@@ -3,3 +3,14 @@
   color: gold;
   padding: 1em;
 }
+
+a {
+  font-size: 0.8em;
+  color: gold;
+  margin: 0.5em;
+  text-decoration: none;
+}
+
+.active {
+  color: #eea4ff;
+}

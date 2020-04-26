@@ -5,6 +5,7 @@ import {Film} from '../../../api/swapi/film';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {extractId} from '../../../shared/util/extract-id-from-url';
+import {filmsLabel} from '../starwars.component';
 
 @Component({
   selector: 'app-films',
@@ -12,7 +13,7 @@ import {extractId} from '../../../shared/util/extract-id-from-url';
 })
 export class FilmsComponent extends LayoutMainParentComponent implements OnInit {
 
-  title = 'Films';
+  title = filmsLabel;
 
   films: Observable<Film[]>;
 

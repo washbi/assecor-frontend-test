@@ -1,5 +1,17 @@
 <div fxLayout="column" fxFlexFill>
-  <header class="header">TODO Star Wars header here</header>
+  <header class="header" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+    <img src="assets/icons8-star-wars.svg">
+    <nav fxLayout="row wrap">
+      <a routerLink="films" routerLinkActive="active">{{films}}</a>
+      <a routerLink="characters" routerLinkActive="active">{{characteres}}</a>
+      <a routerLink="species" routerLinkActive="active">{{species}}</a>
+      <a routerLink="planets" routerLinkActive="active" >{{planets}}</a>
+      <a routerLink="starships" routerLinkActive="active">{{starships}}</a>
+      <a routerLink="vehicles" routerLinkActive="active">{{vehicles}}</a>
+    </nav>
+    <div fxFlex></div>
+    <input placeholder="Search">
+  </header>
 
   <main fxFlex>
     <router-outlet></router-outlet>
