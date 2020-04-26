@@ -1,12 +1,11 @@
-<h2>Filmdetails</h2>
 <h1>{{film?.title}}</h1>
-<h3>{{episode}}</h3>
+<h2>{{episode}}</h2>
 
 <section>
   <h4>Details:</h4>
-  <p>Director: {{film?.director}}</p>
-  <p>Producer: {{film?.producer}}</p>
-  <p>Release Date: {{film?.release_date | date: 'dd.MM.yyyy'}}</p>
+  <p><b>Director:</b> {{film?.director}}</p>
+  <p><b>Producer:</b> {{film?.producer}}</p>
+  <p><b>Release Date:</b> {{film?.release_date | date: 'dd.MM.yyyy'}}</p>
   <textarea [innerHTML]="film?.opening_crawl">
   </textarea>
 </section>
@@ -15,7 +14,7 @@
   <h4>Characters:</h4>
 
   <ng-container *ngFor="let character of characters">
-    <div *ngIf="character | async as c" (click)="goToCharacter(c.url)">{{c.name}}</div>
+    <button *ngIf="character | async as c" (click)="goToCharacter(c.url)">{{c.name}}</button>
   </ng-container>
 </section>
 
@@ -23,7 +22,7 @@
   <h4>Planets:</h4>
 
   <ng-container *ngFor="let planet of planets">
-    <div *ngIf="planet | async as p">{{p.name}}</div>
+    <button *ngIf="planet | async as p">{{p.name}}</button>
   </ng-container>
 </section>
 
@@ -31,7 +30,7 @@
   <h4>Starships:</h4>
 
   <ng-container *ngFor="let starship of starships">
-    <div *ngIf="starship | async as s">{{s.name}}</div>
+    <button *ngIf="starship | async as s">{{s.name}}</button>
   </ng-container>
 </section>
 
@@ -39,6 +38,6 @@
   <h4>Vehicles:</h4>
 
   <ng-container *ngFor="let vehicle of vehicles">
-    <div *ngIf="vehicle | async as v">{{v.name}}</div>
+    <button *ngIf="vehicle | async as v">{{v.name}}</button>
   </ng-container>
 </section>
