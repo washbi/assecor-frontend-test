@@ -28,7 +28,7 @@ then open http://localhost:4200
   * linked to film detail
 * List view of species
   * Can load more data on demand
-* Fetch images from Google 
+* Fetch images from Google
   * only for detail views, because of the google api limit
 * Responsive Web Design:
   * for Desktop >= width 1280px
@@ -48,8 +48,8 @@ then open http://localhost:4200
 ## TODOs
 
 * search text input field
-* show images
-* list view species
+* mobile: burger menu
+* photo carousel
 * list view planets
 * list view starships
 * list view vehicles
