@@ -2,42 +2,44 @@
 <h2>{{episode}}</h2>
 
 <section>
-  <h4>Details:</h4>
+  <h3>Details:</h3>
   <p><b>Director:</b> {{film?.director}}</p>
   <p><b>Producer:</b> {{film?.producer}}</p>
   <p><b>Release Date:</b> {{film?.release_date | date: 'dd.MM.yyyy'}}</p>
-  <textarea [innerHTML]="film?.opening_crawl">
-  </textarea>
+  <div ngStyle.gt-xs="height: 450px; width: 50%" ngStyle.xs="height: 450px; width: 100%">
+    <textarea [innerHTML]="film?.opening_crawl">
+    </textarea>
+  </div>
 </section>
 
 <section>
-  <h4>Characters:</h4>
+  <h3>Characters:</h3>
 
   <ng-container *ngFor="let character of characters">
-    <button *ngIf="character | async as c" (click)="goToCharacter(c.url)">{{c.name}}</button>
+    <button *ngIf="character | async as c" (click)="goToCharacter(c.url)" ngStyle.xs="width: 100%">{{c.name}}</button>
   </ng-container>
 </section>
 
 <section>
-  <h4>Planets:</h4>
+  <h3>Planets:</h3>
 
   <ng-container *ngFor="let planet of planets">
-    <button *ngIf="planet | async as p">{{p.name}}</button>
+    <button *ngIf="planet | async as p" ngStyle.xs="width: 100%">{{p.name}}</button>
   </ng-container>
 </section>
 
 <section>
-  <h4>Starships:</h4>
+  <h3>Starships:</h3>
 
   <ng-container *ngFor="let starship of starships">
-    <button *ngIf="starship | async as s">{{s.name}}</button>
+    <button *ngIf="starship | async as s" ngStyle.xs="width: 100%">{{s.name}}</button>
   </ng-container>
 </section>
 
 <section>
-  <h4>Vehicles:</h4>
+  <h3>Vehicles:</h3>
 
   <ng-container *ngFor="let vehicle of vehicles">
-    <button *ngIf="vehicle | async as v">{{v.name}}</button>
+    <button *ngIf="vehicle | async as v" ngStyle.xs="width: 100%">{{v.name}}</button>
   </ng-container>
 </section>
