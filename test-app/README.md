@@ -14,6 +14,12 @@ then open http://localhost:4200
 
 ## Features
 
+* List view of all films
+* Detail view of film detail
+  * linked to character detail
+* List view of characters
+  * Can load more data on demand
+  
 * Responsive Web Design:
   * for Desktop >= width 1280px
   * for Desktop < width 1280px
@@ -27,3 +33,16 @@ then open http://localhost:4200
 * <a target="_blank" href="https://icons8.com/icons/set/star-wars">Star Wars icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 * Fonts from [Star Jedi](https://www.dafont.com/de/star-jedi.font) and [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 * Icons from [Material Design Icons](https://google.github.io/material-design-icons/)
+
+## TODOs
+
+* search text input field
+* show images
+* list view species
+* list view planets
+* list view starships
+* list view vehicles
+* detail view species
+* detail view planets
+* detail view starships
+* detail view vehicles

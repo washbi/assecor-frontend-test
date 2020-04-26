@@ -54,3 +54,17 @@ input {
   color: var(--b-font-color);
   font-size: 0.8em;
 }
+
+.load-cards-button {
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.load-cards-button:hover {
+  color: var(--a-font-color-primary);
+}

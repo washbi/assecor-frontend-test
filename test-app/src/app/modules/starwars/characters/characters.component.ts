@@ -4,6 +4,7 @@ import {charactersLabel} from '../starwars.component';
 import {People} from '../../../api/swapi/people';
 import {PeopleService} from '../../../shared/services/people/people.service';
 import {Page} from '../../../api/swapi/page';
+import {extractPageNumber} from '../../../shared/util/extract-page-number-from-url';
 
 @Component({
   selector: 'app-characters',
@@ -25,6 +26,8 @@ export class CharactersComponent extends LayoutMainParentComponent implements On
     this.loadPage(1);
   }
 
+  onLoadMore() {
+    this.loadPage(extractPageNumber(this.page.next));
   }
 
   private loadPage(pageNumber: number) {
