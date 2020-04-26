@@ -1,4 +1,6 @@
 import {Component, HostBinding} from '@angular/core';
+import {extractId} from '../../shared/util/extract-id-from-url';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-layout-main-parent',
@@ -17,4 +19,11 @@ export class LayoutMainParentComponent {
   @HostBinding('style.boxSizing') boxSizing = 'border-box';
   @HostBinding('style.padding') padding = '2em';
 
+  constructor(protected router: Router) {
+
+  }
+
+  goTo(path: string, url: string) {
+    this.router.navigate([`starwars/${path}/${extractId(url)}`]);
+  }
 }

@@ -6,6 +6,7 @@ import {PeopleService} from '../../../shared/services/people/people.service';
 import {Page} from '../../../api/swapi/page';
 import {extractPageNumber} from '../../../shared/util/extract-page-number-from-url';
 import {ErrorHandlingService} from '../../../shared/services/error-handling.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -18,8 +19,8 @@ export class CharactersComponent extends LayoutMainParentComponent implements On
   characters: People[] = [];
   page: Page<People>;
 
-  constructor(private service: PeopleService, private errorService: ErrorHandlingService) {
-    super();
+  constructor(protected router: Router, private service: PeopleService, private errorService: ErrorHandlingService) {
+    super(router);
   }
 
   ngOnInit(): void {

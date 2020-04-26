@@ -6,6 +6,7 @@ import {Observable} from 'rxjs';
 import {extractId} from '../../../shared/util/extract-id-from-url';
 import {filmsLabel} from '../starwars.component';
 import {GoogleService} from '../../../shared/services/google.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-films',
@@ -17,8 +18,8 @@ export class FilmsComponent extends LayoutMainParentComponent implements OnInit 
 
   films: Observable<Film[]>;
 
-  constructor(private service: FilmService, private googleService: GoogleService) {
-    super();
+  constructor(protected router: Router, private service: FilmService, private googleService: GoogleService) {
+    super(router);
   }
 
   ngOnInit(): void {

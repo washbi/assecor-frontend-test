@@ -40,7 +40,7 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
   };
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
+              protected router: Router,
               private filmService: FilmService,
               private peopleService: PeopleService,
               private planetService: PlanetService,
@@ -48,7 +48,7 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
               private vehicleService: VehicleService,
               private googleService: GoogleService,
               private errorService: ErrorHandlingService) {
-    super();
+    super(router);
   }
 
   ngOnInit(): void {
@@ -65,10 +65,6 @@ export class FilmsDetailComponent extends LayoutMainParentComponent implements O
         this.fetchVehicles(film.vehicles);
       })
       .catch(err => this.errorService.handleError(err));
-  }
-
-  goToCharacter(url: string) {
-    this.router.navigate([`starwars/character/${extractId(url)}`]);
   }
 
   private romanize(num: number) {

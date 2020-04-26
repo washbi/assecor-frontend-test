@@ -30,7 +30,7 @@
   <h3>Films:</h3>
 
   <ng-container *ngFor="let film of films">
-    <button *ngIf="film | async as f" (click)="goToFilm(f.url)" ngStyle.xs="width: 100%">{{f.title}}</button>
+    <button *ngIf="film | async as f" (click)="goTo('film', f.url)" ngStyle.xs="width: 100%">{{f.title}}</button>
   </ng-container>
 </section>
 

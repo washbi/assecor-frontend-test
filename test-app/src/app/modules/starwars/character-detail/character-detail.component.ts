@@ -33,7 +33,7 @@ export class CharacterDetailComponent extends LayoutMainParentComponent implemen
   vehicles: Observable<Vehicle>[] = [];
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
+              protected router: Router,
               private filmService: FilmService,
               private peopleService: PeopleService,
               private planetsService: PlanetService,
@@ -42,7 +42,7 @@ export class CharacterDetailComponent extends LayoutMainParentComponent implemen
               private vehicleService: VehicleService,
               private googleService: GoogleService,
               private errorService: ErrorHandlingService) {
-    super();
+    super(router);
   }
 
   ngOnInit(): void {
@@ -59,10 +59,6 @@ export class CharacterDetailComponent extends LayoutMainParentComponent implemen
         this.fetchVehicles(people.vehicles);
       })
       .catch(err => this.errorService.handleError(err));
-  }
-
-  goToFilm(url: string) {
-    this.router.navigate([`starwars/film/${extractId(url)}`]);
   }
 
   private fetchFilms(urls: string[]) {

@@ -21,7 +21,7 @@
   <h3>Characters:</h3>
 
   <ng-container *ngFor="let character of characters">
-    <button *ngIf="character | async as c" (click)="goToCharacter(c.url)" ngStyle.xs="width: 100%">{{c.name}}</button>
+    <button *ngIf="character | async as c" (click)="goTo('character', c.url)" ngStyle.xs="width: 100%">{{c.name}}</button>
   </ng-container>
 </section>
 
